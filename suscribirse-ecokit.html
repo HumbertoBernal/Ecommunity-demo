@@ -10,7 +10,9 @@
     <meta name="author" content="">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
-    <title>Perfil | Ecotrash</title>
+    <title>Ecokit Dashboard</title>
+    <!-- Custom CSS -->
+    <link href="assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="dist/css/style.min.css" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -31,9 +33,7 @@
             <div class="lds-pos"></div>
         </div>
     </div>
-    <!-- ============================================================== -->
-    <!-- Main wrapper - style you can find in pages.scss -->
-    <!-- ============================================================== -->
+
     <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full" data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
         <!-- ============================================================== -->
         <!-- Topbar header - style you can find in pages.scss -->
@@ -165,14 +165,9 @@
             <div class="page-breadcrumb">
                 <div class="row align-items-center">
                     <div class="col-5">
-                        <h4 class="page-title">Profile Page</h4>
-
+                        <h4 class="page-title">Ecokit Dashboard</h4>
                     </div>
-                    <div class="col-7">
-                        <div class="text-right upgrade-btn">
-                            <a href="pages-profile.html" class="btn btn-danger text-white">Editar Perfil</a>
-                        </div>
-                    </div>
+                 
                 </div>
             </div>
             <!-- ============================================================== -->
@@ -183,91 +178,70 @@
             <!-- ============================================================== -->
             <div class="container-fluid">
                 <!-- ============================================================== -->
-                <!-- Start Page Content -->
+                <!-- Sales chart -->
                 <!-- ============================================================== -->
-                <!-- Row -->
                 <div class="row">
-                    <!-- Column -->
-                    <div class="col-lg-4 col-xlg-3 col-md-5">
+                    <div class="col-md-8">
                         <div class="card">
                             <div class="card-body">
-                                <center class="m-t-30"> <img src="assets/images/users/5.jpg" class="rounded-circle" width="150" />
-                                    <h4 class="card-title m-t-10">Hanna Gover</h4>
-                                    <h6 class="card-subtitle">Accoubts Manager Amix corp</h6>
-                                    <div class="row text-center justify-content-md-center">
-                                        <div class="col-4"><a href="javascript:void(0)" class="link"><i class="icon-people"></i> <font class="font-medium">254</font></a></div>
-                                        <div class="col-4"><a href="javascript:void(0)" class="link"><i class="icon-picture"></i> <font class="font-medium">54</font></a></div>
+                                <div class="d-md-flex align-items-center">
+                                    <div>
+                                        <h4 class="card-title">Escoge tu kit</h4>
+                                        <h5 class="card-subtitle">Actualmente contamos con 2 opciones</h5>
                                     </div>
-                                </center>
-                            </div>
-                            <div>
-                                <hr> </div>
-                            <div class="card-body"> <small class="text-muted">Email address </small>
-                                <h6>hannagover@gmail.com</h6> <small class="text-muted p-t-30 db">Phone</small>
-                                <h6>+91 654 784 547</h6> <small class="text-muted p-t-30 db">Address</small>
-                                <h6>71 Pilgrim Avenue Chevy Chase, MD 20815</h6>
-                                <div class="map-box">
-                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d470029.1604841957!2d72.29955005258641!3d23.019996818380896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e848aba5bd449%3A0x4fcedd11614f6516!2sAhmedabad%2C+Gujarat!5e0!3m2!1sen!2sin!4v1493204785508" width="100%" height="150" frameborder="0" style="border:0" allowfullscreen></iframe>
                                 </div>
-                                <br>
-                                <small class="text-muted p-t-30 db">Social Profile</small>
-                                <br/>
-                                <button class="btn btn-circle btn-secondary"><i class="fab fa-facebook-f"></i></button>
-                                <button class="btn btn-circle btn-secondary"><i class="fab fa-twitter"></i></button>
-                                <button class="btn btn-circle btn-secondary"><i class="fab fa-youtube"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Column -->
-                    <!-- Column -->
-                    <div class="col-lg-8 col-xlg-9 col-md-7">
-                        <div class="card">
-                            <div class="card-body">
-                                <div style="display: inline-block;"></div>
-                                <h3> EcoPuntos: </h3><strong> 20</strong>
-                                <h3> Plástico reciclado: </h3><strong> 40kg</strong>
-                                <h3> Papeles y Carton reciclado: </h3><strong> 15kg</strong>
+                                <div class="row">
 
+                                    <div class="col-lg-6 col-12">
+                                       Kit 1
+                                        <li>Tacho de basura con dos compartimientos</li>
+                                        <li>Bolsa Ecotrash</li>
+                                        <li>Bolsas ecológicas (envio cada 2 semanas)</li>
+                                        <li>3 imantados </li>
+
+
+
+                                    </div>
+                                    <div class="col-lg-6 col-12  ">
+                                        Kit 2
+                                        <ul>
+                                            <li>Bolsa Ecotrash</li>
+                                            <li>Bolsas ecológicas (envio cada 2 semanas)</li>
+                                            <li>3 imantados </li>
+                                        </ul>
+                                    </div>
+                                    <br>
+                                    <div class="dropdown-divider" style="height:0;margin:0.5rem 0;overflow:hidden;border-top:1px solid #f8f9fa" ></div>
+
+                                    <form>
+                                        <label for="kits" class="mx-2"><strong>Elige un kit:<strong></label>
+                                        <select id="kits" name="kits" >
+                                            <option value="kit1">Kit 1</option>
+                                            <option value="kit2">Kit 2</option>
+                                        </select>
+                                    </form>
+                                    <br>
+                                    <a class="btn btn-success text-white mx-2" href="gracias.html">  Comprar</a>
+
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <!-- Column -->
                 </div>
-                <!-- Row -->
                 <!-- ============================================================== -->
-                <!-- End PAge Content -->
-                <!-- ============================================================== -->
-                <!-- ============================================================== -->
-                <!-- Right sidebar -->
-                <!-- ============================================================== -->
-                <!-- .right-sidebar -->
-                <!-- ============================================================== -->
-                <!-- End Right sidebar -->
-                <!-- ============================================================== -->
+
             </div>
             <!-- ============================================================== -->
             <!-- End Container fluid  -->
             <!-- ============================================================== -->
-            <!-- ============================================================== -->
-            <!-- footer -->
-            <!-- ============================================================== -->
-            <footer class="footer text-center">
-                Nuestro medio ambiente te agradece por cuidar de él.
-            </footer>
-            <!-- ============================================================== -->
-            <!-- End footer -->
-            <!-- ============================================================== -->
+          
         </div>
         <!-- ============================================================== -->
         <!-- End Page wrapper  -->
         <!-- ============================================================== -->
     </div>
-    <!-- ============================================================== -->
-    <!-- End Wrapper -->
-    <!-- ============================================================== -->
-    <!-- ============================================================== -->
-    <!-- All Jquery -->
-    <!-- ============================================================== -->
+
+ 
     <script src="assets/libs/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap tether Core JavaScript -->
     <script src="assets/libs/popper.js/dist/umd/popper.min.js"></script>
@@ -279,6 +253,11 @@
     <script src="dist/js/sidebarmenu.js"></script>
     <!--Custom JavaScript -->
     <script src="dist/js/custom.js"></script>
+    <!--This page JavaScript -->
+    <!--chartis chart-->
+    <script src="assets/libs/chartist/dist/chartist.min.js"></script>
+    <script src="assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
+    <script src="dist/js/pages/dashboards/dashboard1.js"></script>
 </body>
 
 </html>
